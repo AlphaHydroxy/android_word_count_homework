@@ -19,18 +19,19 @@ public class Wordcount {
 
         public String countWordOccurrence(String word) {
             String[] wordOccurrence = word.trim().split("[(' '),.-]");
-            HashMap<String, Integer> map = new HashMap<String, Integer>();
+            Map<String, Integer> map = new HashMap<String, Integer>();
             for (String str : wordOccurrence) {
                 if (map.get(str) != null) {
-                    map.put(str, map.get(str) + 1);
+                    map.put(str, map.get(str) +1);
                 } else {
                     map.put(str, 1);
                 }
             }
             Set<String> str2 = map.keySet();
+            String concatenatedOutput = "";
             for(String str : str2){
-                return "Words: " + str + " repeated " + map.get(str) + " times";
+                concatenatedOutput += ("Words: " + str + " repeated " + map.get(str) + " times\n");
             }
-            return word;
+            return concatenatedOutput;
         }
     }

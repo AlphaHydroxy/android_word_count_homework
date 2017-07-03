@@ -25,7 +25,7 @@ public class WordcountTest {
 
     @Test
     public void wordOccurrence(){
-        assertEquals("Words: hello repeated 2 times", wordcount.countWordOccurrence(new String("hello hello")));
+        assertEquals("Words: hello repeated 2 times\n", wordcount.countWordOccurrence(new String("hello hello")));
     }
 
 }
