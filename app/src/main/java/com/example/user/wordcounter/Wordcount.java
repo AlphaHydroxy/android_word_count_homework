@@ -3,6 +3,7 @@ package com.example.user.wordcounter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by user on 03/07/2017.
@@ -16,12 +17,20 @@ public class Wordcount {
             return "You wrote = " + wordCount + " word(s)!";
         }
 
-//        public String numOfWords(String word){
-//            Map<String, Integer> map = new HashMap<>();
-//            for (String w : word) {
-//                Integer n = map.get(w);
-//                n = (n == null) ? 1 : ++n;
-//                map.put(w, n);
-//            }
-//        }re
+        public String countWordOccurrence(String word) {
+            String[] wordOccurrence = word.trim().split("[(' '),.-]");
+            HashMap<String, Integer> map = new HashMap<String, Integer>();
+            for (String str : wordOccurrence) {
+                if (map.get(str) != null) {
+                    map.put(str, map.get(str) + 1);
+                } else {
+                    map.put(str, 1);
+                }
+            }
+            Set<String> str2 = map.keySet();
+            for(String str : str2){
+                return "Words: " + str + " repeated " + map.get(str) + " times";
+            }
+            return word;
+        }
     }

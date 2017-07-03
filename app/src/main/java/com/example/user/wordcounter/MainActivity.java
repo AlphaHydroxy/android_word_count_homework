@@ -30,5 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         Wordcount wordcount = new Wordcount();
         answerText.setText(wordcount.countWord(question));
+
+
     }
 }
