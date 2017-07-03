@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     EditText questionEditText;
     Button countText;
     TextView answerText;
+    TextView occurrenceText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         questionEditText = (EditText)findViewById(R.id.question);
         countText = (Button)findViewById(R.id.count);
         answerText = (TextView)findViewById(R.id.answer_word_count);
+        occurrenceText = (TextView)findViewById(R.id.occurrence_count);
     }
 
     public void onClick(View button){
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         Wordcount wordcount = new Wordcount();
         answerText.setText(wordcount.countWord(question));
-
+        occurrenceText.setText((wordcount.countWordOccurrence(question)));
 
     }
 }
